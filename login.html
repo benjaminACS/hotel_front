@@ -87,7 +87,7 @@
                 console.log(JSON.stringify(document.getElementById("txtpassword")))
                 $.ajax({
                     method: "POST",
-                    url: "http://localhost:3001/api/users/login",
+                    url: "https://hotelbenjamin.onrender.com/api/users/login",
                     dataType: "json",
                     data: JSON.stringify({
                         password: clave,
@@ -103,7 +103,7 @@
 
                     $.ajax({
                         method: "GET",
-                        url: "http://localhost:3001/api/reservas",
+                        url: "https://hotelbenjamin.onrender.com/api/reservas",
                         dataType: "json"
                     }).done(function (msg) {
 
