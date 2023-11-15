@@ -1,0 +1,128 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('hotel-image.jpg'); /* Cambia 'tu-imagen.jpg' por la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto fija la imagen de fondo */
+    color: #a7a3a3;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #747372;
+    text-decoration: none;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(59, 58, 58, 0.726);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Estilos para el título principal */
+h1 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada y etiquetas */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: left;
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: rgba(95, 82, 170, 0.1);
+    border-radius: 5px;
+    color: #000000; /* Cambiado a un color más oscuro para una mejor legibilidad */
+    outline: none;
+}
+
+/* Estilos para las etiquetas de los checkbox */
+label.checkbox-label {
+    display: inline;
+    margin-right: 10px;
+    font-weight: normal;
+    color: hsl(0, 0%, 0%); /* Cambiado a un color más oscuro para una mejor legibilidad */
+}
+
+/* Estilos para el botón de reserva */
+button {
+    background-color: #ff0b03;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #ee1212;
+}
+
+/* Estilos para el resumen de la reserva */
+#resumenReserva {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#resumenReserva h2 {
+    font-size: 24px;
+    color: #ff8c00;
+    margin-bottom: 10px;
+}
+
+#resumenReserva p {
+    margin-bottom: 10px;
+}
+
+/* Estilos para hacer el texto de los extras más visible en secciones específicas */
+select[name="tipoHabitacion"] {
+    background-color: rgb(253, 253, 253);
+    color: #000000; /* Cambiado a un color más oscuro para una mejor legibilidad */
+    border: none;
+}
+
+select[name="tipoHabitacion"] option {
+    color: #000000;
+}
+
+/* Estilos para mejorar la visibilidad de los calendarios */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Añade más estilos o ajustes personalizados si es necesario */
+  
+
+/* Color negro para los elementos seleccionados */
+

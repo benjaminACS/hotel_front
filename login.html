@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/botones.css">
+</head>
+
+<body>
+    <section class="seccion-comunicacion">
+        <div>
+            <!-- Contenido de la sección de comunicación -->
+        </div>
+    </section>
+    <section class="seccion-portada">
+        <div>
+            <!-- Contenido de la sección de portada -->
+        </div>
+    </section>
+    <section class="features">
+        <h2>Login</h2>
+        <div id="loginReserva">
+            <form id="reservaForm">
+                <label for="nombre">Email:</label>
+                <input type="email" id="txtemail" name="txtemail" required>
+                <label for="email">Contraseña:</label>
+                <input type="password" id="txtpassword" name="txtpassword" required>
+                <button type="submit" id="btnreserva">
+                    <i class="fa fa-spinner fa-spin hidden-button"></i>Loading
+                </button>
+            </form>
+        </div>
+        <div id="listadoReserva" class="hidden">
+            <table id="tblreservas">
+                <thead>
+                    <tr>
+                        <th>llegada</th>
+                        <th>salida</th>
+                        <th>cliente</th>
+                        <th>numeropersonas</th>
+                        <th>numerohabitaciones</th>
+                        <th>desayuno</th>
+                        <th>wifi</th>
+                        <th>spa</th>
+                        <th>email</th>
+                        <th>elim</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <p>Dirección: 123 Calle Principal, Ciudad, País</p>
+                <p>Teléfono: +51 972 031 313</p>
+                <p>Correo Electrónico: info@hoteloasis.com</p>
+            </div>
+            <div class="important-links">
+                <h2>Enlaces Importantes</h2>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+        $(document).ready(function () {//cuando termina de cargar la pagina
+            $("#reservaForm").submit(function (event) {
+                event.preventDefault();
+                let email = $("#txtemail").val();//jquery
+                let clave = document.getElementById("txtpassword").value;
+                console.log(JSON.stringify(document.getElementById("txtpassword")))
+                $.ajax({
+                    method: "POST",
+                    url: "http://localhost:3001/api/users/login",
+                    dataType: "json",
+                    data: JSON.stringify({
+                        password: clave,
+                        email: email
+                    }),
+                    contentType: "application/json; charset=utf-8"
+                }).done(function (msg) {
+
+                    $("#listadoReserva").removeClass("hidden");
+                    $("#loginReserva").addClass("hidden");
+
+                    $("#tblreservas > tbody > tr").remove();
+
+                    $.ajax({
+                        method: "GET",
+                        url: "http://localhost:3001/api/reservas",
+                        dataType: "json"
+                    }).done(function (msg) {
+
+                        console.log(JSON.stringify(msg));
+                        let htmlTabla = "";
+                        msg.data.forEach(function (data, index) {
+                            htmlTabla += "<tr>";
+                            htmlTabla += "<td>" + (formatDate(data.llegada) ?? "") + "</td>";
+                            htmlTabla += "<td>" + (formatDate(data.salida) ?? "") + "</td>";
+                            htmlTabla += "<td>" + (data.cliente ?? "") + "</td>";
+                            htmlTabla += "<td>" + (data.numeropersonas ?? "") + "</td>";
+                            htmlTabla += "<td>" + (data.numerohabitaciones ?? "") + "</td>";
+                            htmlTabla += "<td>" + (data.desayuno ?? "") + "</td>";
+                            htmlTabla += "<td>" + (data.wifi == "X" ? "SI" : "NO") + "</td>";
+                            htmlTabla += "<td>" + (data.spa == "X" ? "SI" : "NO") + "</td>";
+                            htmlTabla += "<td>" + (data.email == "X" ? "SI" : "NO") + "</td>";
+                            htmlTabla += "<td>" + (formatDate(data.createdAt) ?? "") + "</td>";
+                            htmlTabla += "</tr>";
+                        });
+                        $("#tblreservas > tbody").append(htmlTabla);
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        alert("error ${textStatus}");
+                    }).always(function () {
+                        // alert("finished");
+                    })
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert("error ${textStatus}");
+                }).always(function () {
+                    // alert("finished");
+                    $("#btnreserva i").addClass('hidden-button');
+                });
+            });
+
+
+        });
+
+
+        function formatDate(date) {
+            if (date == undefined) {
+                return undefined;
+            }
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2)
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+
+            return [day, month, year].join('/');
+        }
+
+        console.log(formatDate('Sun May 11,2014'));
+    </script>
+</body>
+
+</html>

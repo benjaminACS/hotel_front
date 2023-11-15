@@ -1,0 +1,376 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    color: #333;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.logo>img {
+    font-size: 24px;
+    font-weight: bold;
+    height: 90px;
+
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Estilos de la sección hero */
+.hero {
+    background-image: url('hotel-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: #ff8c00;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Estilos para otras secciones */
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Otros estilos y estilización para diferentes secciones de tu sitio web */
+
+
+/* Agrega este código a tu archivo "styles.css" o en una etiqueta <style> en el encabezado de tu HTML */
+
+.features {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 18px;
+    color: #666;
+}
+
+.features li {
+    margin: 10px 0;
+}
+
+header {
+    border-bottom: #efeded solid 1px;
+    ;
+}
+
+header li {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out .2s;
+}
+
+header li.different {
+    border: none;
+    position: relative;
+}
+
+header li.different:hover {
+    border: none;
+}
+
+header li:hover {
+    border-bottom: 10px solid #FFFFFF;
+}
+
+
+.different::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    left: 50%;
+    bottom: 0;
+    background-color: white;
+    transition: all ease-in-out .2s;
+}
+
+.different:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* .head-menu .active {
+    border-bottom: 3px solid #a9a9a9;
+    color: #333;
+} */
+
+.head-menu .link-menu {
+    padding-bottom: 10px;
+    font-weight: bold;
+    flex: 1 1 0
+}
+
+.head-menu .link-menu:hover {
+    color: #cd2e2e;
+    font-weight: bold;
+
+
+}
+
+.head-menu .link-menu::after {
+    position: absolute;
+    content: "";
+    background-color: chocolate;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+
+.head-menu .link-menu:hover::after {
+    width: 100%;
+}
+
+
+.head-menu ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*Seccion*/
+
+.seccion-comunicacion div {
+    width: 95%;
+    padding-top: 15px;
+    padding-left: 10px;
+    height: 40px;
+    border-bottom: #efeded 0px solid;
+}
+
+.seccion-portada {
+    background-image: url(imagenes/hotel-image.jpg);
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.features {
+    align-items: center;
+}
+
+.features ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features ul li {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.features ul li p {
+    padding: 10px 15px;
+}
+
+.features ul li img {
+    width: 90%;
+    height: 250px;
+    padding: 5px;
+    border: #ccc solid 3px;
+}
+
+
+
+
+a {
+    color: #747372;
+    text-decoration: none;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(59, 58, 58, 0.726);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Estilos para el título principal */
+h1 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada y etiquetas */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: left;
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: rgba(95, 82, 170, 0.1);
+    border-radius: 5px;
+    color: #000000;
+    /* Cambiado a un color más oscuro para una mejor legibilidad */
+    outline: none;
+}
+
+/* Estilos para las etiquetas de los checkbox */
+label.checkbox-label {
+    display: inline;
+    margin-right: 10px;
+    font-weight: normal;
+    color: hsl(0, 0%, 0%);
+    /* Cambiado a un color más oscuro para una mejor legibilidad */
+}
+
+/* Estilos para el botón de reserva */
+button {
+    background-color: #ff0b03;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #ee1212;
+}
+
+/* Estilos para el resumen de la reserva */
+#resumenReserva {
+    margin-top: 20px;
+    text-align: center;
+    width: 40%;
+    margin: auto auto;
+
+}
+
+#resumenReserva h2 {
+    font-size: 24px;
+    color: #ff8c00;
+    margin-bottom: 10px;
+}
+
+#resumenReserva p {
+    margin-bottom: 10px;
+}
+
+/*TABLAS*/
+
+/* body {
+    font: normal medium/1.4 sans-serif;
+  } */
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th,
+td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
+.hidden{
+    display: none!important;
+}
