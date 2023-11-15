@@ -374,3 +374,46 @@ tbody tr:nth-child(odd) {
 .hidden{
     display: none!important;
 }
+
+
+
+#inicio{
+    background-color: rgb(70, 130, 180);
+    border-radius: 25px;
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 550;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin: 0 25px;
+    transition: all 0.3s;
+}
+#inicio:hover {
+    color: #000000;
+}
+
+#reservar,#notificaciones,#preguntas{
+    font-size: 18px;
+    font-weight: 550;
+    text-decoration: none;
+    color: #333;
+    margin: 0 25px;
+    position: relative;
+}
+#reservar:hover,#notificaciones:hover,#preguntas:hover{
+    color: rgb(70, 130, 180);
+    border-bottom: 2px solid rgb(70, 130, 180);
+}
+
+.logo>img {
+    height: 75px;
+}
+
+.container-header{
+    width: 100%;
+    padding: 0 75px;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
