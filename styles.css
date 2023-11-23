@@ -377,7 +377,7 @@ tbody tr:nth-child(odd) {
 
 
 
-#inicio{
+.menu_activo{
     background-color: rgb(70, 130, 180);
     border-radius: 25px;
     padding: 8px 25px;
@@ -388,11 +388,11 @@ tbody tr:nth-child(odd) {
     margin: 0 25px;
     transition: all 0.3s;
 }
-#inicio:hover {
+.menu_activo:hover {
     color: #000000;
 }
 
-#reservar,#notificaciones,#preguntas{
+#reservar,#notificaciones,#preguntas,#inicio{
     font-size: 18px;
     font-weight: 550;
     text-decoration: none;
@@ -400,7 +400,7 @@ tbody tr:nth-child(odd) {
     margin: 0 25px;
     position: relative;
 }
-#reservar:hover,#notificaciones:hover,#preguntas:hover{
+#reservar:hover,#notificaciones:hover,#preguntas:hover,#inicio:hover{
     color: rgb(70, 130, 180);
     border-bottom: 2px solid rgb(70, 130, 180);
 }

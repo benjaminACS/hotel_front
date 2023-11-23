@@ -16,40 +16,6 @@ body{
     background-size: cover;
 }
 
-#inicio {
-    border-radius: 25px;
-    padding: 8px 25px;
-    font-size: 18px;
-    font-weight: 550;
-    text-decoration: none;
-    margin: 0 25px;
-    transition: all 0.3s;
-    color: white;
-    background-color: rgba(99, 154, 255, 0.5);
-}
-
-#inicio:hover {
-    background-color: rgb(192, 232, 245);
-    color: black;
-}
-
-#reservar,
-#notificaciones,
-#preguntas {
-    font-size: 18px;
-    font-weight: 550;
-    text-decoration: none;
-    color: white;
-    margin: 0 25px;
-    position: relative;
-}
-
-#reservar:hover,
-#notificaciones:hover,
-#preguntas:hover {
-    color: rgb(192, 232, 245);
-    border-bottom: 2px solid rgb(192, 232, 245);
-}
 
 .logo>img {
     height: 75px;
