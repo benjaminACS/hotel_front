@@ -38,7 +38,7 @@ body{
     align-items: center;
     height: 100vh;
 }
-.container{
+.container_register{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,7 @@ body{
     color: white;
     margin-bottom: 35px;
 }
-.input-full-name, .input-age, .input-email, .input-password{
+.container_register .input-full-name, .container_register .input-age,.container_register .input-email,.container_register .input-password{
     background-color: transparent;
     font-size: 16px;
     width: 425px;
